@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int x,y;
+    scanf("%d %d",&x,&y);//输入初始数组长度和循环右移个数
+    int a[x],i;
+    for(i=0;i<x;i++)
+        scanf("%d",&a[i]);//初始化数组
+    int j,k;
+    for(i=0;i<y;i++)
+    {
+        k=a[x-1];
+        for(j=x-1;j>0;j--)
+            a[j]=a[j-1];
+        a[0]=k;
+    }
+    for(i=0;i<x;i++)
+    {
+        if(i==x-1)
+            printf("%d",a[i]);
+        else 
+		   printf("%d ",a[i]);
+    }
+}
