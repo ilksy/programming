@@ -1,0 +1,39 @@
+//升级版冒泡排序
+#include<stdio.h>
+int main(void)
+{
+	int n;
+	scanf("%d",&n);
+	int a[n],left=0,right=n-1,t,i;	
+	for( i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	while(left<right)
+	{
+		for(i=left;i<right;i++)
+		{
+			if(a[i]>a[i+1])
+			{
+				t=a[i];
+				a[i]=a[i+1];
+				a[i+1]=t;	
+			}
+		}
+		right--;
+		for(i=right;i>left;i--)
+		{
+			if(a[i]<a[i-1])
+			{
+				t=a[i];
+				a[i]=a[i-1];
+				a[i-1]=t;
+			}
+		}
+		left++;
+	}
+	for(i=0;i<n;i++)
+		printf("%d ",a[i]);	
+} 
+/*
+5
+3 2 5 4 1
+*/
