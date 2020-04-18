@@ -1,0 +1,33 @@
+//冒泡排序函数法
+#include<stdio.h>
+void sort(int a[],int n);
+int main()
+{
+	int i,n;
+	scanf("%d",&n);
+	int b[n];
+	for(i=0;i<n;i++)
+		scanf("%d",&b[i]);
+	sort(b,n);
+	for(i=0;i<n;i++)
+		printf("%d ",b[i]);	
+}
+void sort(int a[],int n)
+{
+	int i,j,k,t;
+		for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(a[j]>a[j+1])
+			{
+				t=a[j];
+				a[j]=a[j+1];
+				a[j+1]=t;
+				k=0;
+			}
+		}
+		if(k)
+			break;
+	}
+}
